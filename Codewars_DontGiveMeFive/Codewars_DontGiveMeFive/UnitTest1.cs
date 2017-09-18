@@ -9,26 +9,18 @@ namespace Codewars_DontGiveMeFive
         [TestMethod]
         public void Input_0_And_1_Should_Be_2()
         {
-            //arrange
-            var start = 0;
-            var end = 1;
-            var expected = 2;
-            //act
-            var actual = Kata.DontGiveMeFive(start, end);
-            //assert
-            Assert.AreEqual(expected, actual);
+            GetDontGiveMeFiveResult(2, 0, 1);
         }
 
         [TestMethod]
         public void Input_4_And_5_Should_Be_1()
         {
-            //arrange
-            var start = 4;
-            var end = 5;
-            var expected = 1;
-            //act
+            GetDontGiveMeFiveResult(1, 4, 5);
+        }
+
+        private static void GetDontGiveMeFiveResult(int expected, int start, int end)
+        {
             var actual = Kata.DontGiveMeFive(start, end);
-            //assert
             Assert.AreEqual(expected, actual);
         }
     }
