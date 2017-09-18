@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Codewars_DontGiveMeFive
@@ -43,9 +44,9 @@ namespace Codewars_DontGiveMeFive
         }
 
         [TestMethod]
-        public void Input_0_And_60_Should_Be_55()
+        public void Input_0_And_60_Should_Be_46()
         {
-            GetDontGiveMeFiveResult(55, 0, 60);
+            GetDontGiveMeFiveResult(46, 0, 60);
 
         }
 
@@ -56,6 +57,17 @@ namespace Codewars_DontGiveMeFive
             GetDontGiveMeFiveResult(5, -5, 0);
         }
 
+        [TestMethod]
+        public void Input_N55_And_N45_Should_Be_4()
+        {
+            GetDontGiveMeFiveResult(4, -55, -45);
+        }
+
+        [TestMethod]
+        public void Input_500_And_600_Should_Be_1()
+        {
+            GetDontGiveMeFiveResult(1, 500, 600);
+        }
 
         private static void GetDontGiveMeFiveResult(int expected, int start, int end)
         {
@@ -68,24 +80,11 @@ namespace Codewars_DontGiveMeFive
     {
         public static int DontGiveMeFive(int start, int end)
         {
-            return start < 0 ?
-               GetResult(JudgeAndChange(end), JudgeAndChange(start)) :
-           GetResult(start, end);
-
-        }
-
-        private static int GetResult(int start, int end)
-        {
             var result = 0;
             for (var i = start; i <= end; i++)
-                if (i % 5 != 0 || i % 10 == 0)
+                if (!i.ToString().Contains("5"))
                     result++;
             return result;
-        }
-
-        public static int JudgeAndChange(int num)
-        {
-            return num < 0 ? Math.Abs(num) : num;
         }
 
     }
