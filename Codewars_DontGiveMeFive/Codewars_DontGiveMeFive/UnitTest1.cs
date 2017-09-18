@@ -15,7 +15,6 @@ namespace Codewars_DontGiveMeFive
             var expected = 2;
             //act
             var actual = Kata.DontGiveMeFive(start, end);
-
             //assert
             Assert.AreEqual(expected, actual);
 
@@ -27,7 +26,10 @@ namespace Codewars_DontGiveMeFive
     {
         public static int DontGiveMeFive(int start, int end)
         {
-            throw new NotImplementedException();
+            var result = 0;
+            for (int i = start; i <= end; i++)
+                result++;
+            return result;
         }
     }
 }
