@@ -68,12 +68,10 @@ namespace Codewars_DontGiveMeFive
     {
         public static int DontGiveMeFive(int start, int end)
         {
-            var result = 0;
-            if (start < 0)
-                result = GetResult(JudgeAndChange(end), JudgeAndChange(start));
-            else
-                result = GetResult(start, end);
-            return result;
+            return start < 0 ?
+               GetResult(JudgeAndChange(end), JudgeAndChange(start)) :
+           GetResult(start, end);
+
         }
 
         private static int GetResult(int start, int end)
