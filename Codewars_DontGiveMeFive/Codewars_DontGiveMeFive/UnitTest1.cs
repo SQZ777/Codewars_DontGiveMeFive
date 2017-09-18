@@ -17,8 +17,19 @@ namespace Codewars_DontGiveMeFive
             var actual = Kata.DontGiveMeFive(start, end);
             //assert
             Assert.AreEqual(expected, actual);
+        }
 
-
+        [TestMethod]
+        public void Input_4_And_5_Should_Be_1()
+        {
+            //arrange
+            var start = 4;
+            var end = 5;
+            var expected = 1;
+            //act
+            var actual = Kata.DontGiveMeFive(start, end);
+            //assert
+            Assert.AreEqual(expected, actual);
         }
     }
 
