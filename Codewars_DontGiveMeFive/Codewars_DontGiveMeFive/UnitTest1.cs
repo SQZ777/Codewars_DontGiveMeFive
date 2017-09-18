@@ -39,7 +39,12 @@ namespace Codewars_DontGiveMeFive
         {
             var result = 0;
             for (int i = start; i <= end; i++)
-                result++;
+            {
+                if (i != 5)
+                {
+                    result++;
+                }
+            }
             return result;
         }
     }
