@@ -25,6 +25,12 @@ namespace Codewars_DontGiveMeFive
             GetDontGiveMeFiveResult(1, 14, 15);
         }
 
+        [TestMethod]
+        public void Input_9_And_10_Should_Be_2()
+        {
+            GetDontGiveMeFiveResult(2, 9, 10);
+        }
+
         private static void GetDontGiveMeFiveResult(int expected, int start, int end)
         {
             var actual = Kata.DontGiveMeFive(start, end);
@@ -39,7 +45,7 @@ namespace Codewars_DontGiveMeFive
             var result = 0;
             for (int i = start; i <= end; i++)
             {
-                if (i % 5 == 0 || 10 % i == 0)
+                if (i % 5 != 0 || i % 10 == 0)
                 {
                     result++;
                 }
